@@ -1,0 +1,7 @@
+.abc{
+    width: 10px;
+    align-self: flex-start;
+    align-content: flex-end;
+    display: flex;
+    flex-wrap: wrap;
+}

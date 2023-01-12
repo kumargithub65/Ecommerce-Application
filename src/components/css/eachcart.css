@@ -1,0 +1,35 @@
+.quantity-counter {
+    display: flex;
+    align-items: center;
+    /* // border: 1px solid #ccc; adds a border */
+    border-radius: 5px; /* rounds the corners of the border */
+  }
+  
+  .decrement-button, .increment-button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: transparent; /* remove background color */
+    transition: all 0.2s ease-in-out; /* adds a transition effect */
+  }
+  
+  .decrement-button:hover, .increment-button:hover {
+    background-color: #ccc; /* adds a hover effect */
+    transform: scale(1.2); /* increases button size on hover */
+    align-items: center;
+    align-content: center;
+  }
+  
+  .quantity-input {
+    width: 40px;
+    text-align: center;
+    border: none;
+    font-size: 18px;
+    padding: 0px 10px; /* add padding */
+  }
+  .asasa{
+    all:unset;
+    cursor: pointer;
+  }
