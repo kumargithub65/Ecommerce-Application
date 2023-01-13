@@ -26,7 +26,7 @@ return <globalContext.Consumer>
       return ele.quantity;
     }
   })[inde];
-console.log(quantit)
+// console.log(quantit)
   return (
     <div className="pro">
            <Link to={`/products/${id}`}>

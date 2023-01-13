@@ -5,7 +5,7 @@ import "./css/home.css";
 import logo from "../assets/img/logo.png";
 import { useState } from "react";
 import SimpleBadge from "./cartbadge";
-
+import { NavLink } from "react-router-dom";
 
 export default function Header() {
   let navx = useNavigate();
@@ -25,9 +25,11 @@ export default function Header() {
         return (
             <div>
           <section id="header">
-            <Link to="/">
+            <NavLink className={({ isActive }) =>
+              isActive ? "active" : undefined
+            } to="/">
               <img src={logo} alt="" />
-            </Link>
+            </NavLink>
             <div>
               <div onClick={change} className="hamburger">
                 {a? <i className="fa-solid fa-xmark"></i> :  <i className="fa-solid fa-bars"></i>}
@@ -35,19 +37,25 @@ export default function Header() {
 
               <ul id="navbar">
                 <li>
-                  <Link to="/">Home</Link>
+                  <NavLink className={({ isActive }) =>
+              isActive ? "active" : undefined
+            } to="/">Home</NavLink>
                 </li>
                 <li>
-                  <Link to="/products">Shop</Link>
+                  <NavLink className={({ isActive }) =>
+              isActive ? "active" : undefined
+            } to="/products">Shop</NavLink>
                 </li>
 
                 {/* <li><a href="about.html" >cart</a></li>
        <li><a href="contact.html">logout</a></li> */}
                 {/* <i class="fas fa-shopping-bag"></i>  */}
                 <li>
-                  <Link to="/cart">
+                  <NavLink className={({ isActive }) =>
+              isActive ? "active" : undefined
+            } to="/cart">
                   <SimpleBadge counttt={value.carts.length}/>    
-                  </Link>{" "}
+                  </NavLink>{" "}
                 
                 </li>
               
@@ -64,10 +72,14 @@ export default function Header() {
           {a && (
                 <ul id="nav">
                   <li>
-                    <Link to="/">Home</Link>
+                    <NavLink className={({ isActive }) =>
+              isActive ? "active" : undefined
+            } to="/">Home</NavLink>
                   </li>
                   <li>
-                    <Link to="/products">Shop</Link>
+                    <NavLink className={({ isActive }) =>
+              isActive ? "active" : undefined
+            } to="/products">Shop</NavLink>
                   </li>
 
                   {/* <li><a href="about.html" >cart</a></li>
@@ -75,12 +87,14 @@ export default function Header() {
                   {/* <i class="fas fa-shopping-bag"></i>  */}
                   <li>
                     
-                    <Link to="/cart">
+                    <NavLink className={({ isActive }) =>
+              isActive ? "active" : undefined
+            } to="/cart">
                       {/* <span className="material-symbols-outlined">
                         shopping_cart
                       </span>     */}
                       <SimpleBadge counttt={value.carts.length}/>      
-                    </Link>{" "}
+                    </NavLink>{" "}
                 
              
                   </li>

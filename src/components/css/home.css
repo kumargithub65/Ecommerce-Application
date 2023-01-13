@@ -379,6 +379,28 @@ display: inline;
 cursor: pointer;
 }
 
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: rgba(0, 55, 255, 0.642);
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+
+.active{
+    color: rgba(0, 55, 255, 0.642);
+
+}
+#navbar li a:hover,
+#navbar li a.active {
+    color: rgba(0, 55, 255, 0.642);
+    /* text-decoration: underline; */
+}
+
 #navbar{
 display: none;
 }

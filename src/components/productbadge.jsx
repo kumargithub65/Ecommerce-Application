@@ -4,7 +4,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import "./css/home.css";
 
 export default function SimpleBadge({ere}) {
-  console.log(ere)
+  // console.log(ere)
   return (
     <div className='badas'>
 
