@@ -428,7 +428,7 @@ top: 730px;
 left :1px; */
 }
 
-#header{
+/* #header{
     background-color: #bddbff;
     
 }
@@ -440,9 +440,14 @@ left :1px; */
 
 #nav{
     background-color: #bddbff;
-    /* margin: 3px; */
+  
     
 
+} 
+*/
+
+#header, #hero, #nav {
+    background-color: #bddbffc7;
 }
 
 #nav li {
