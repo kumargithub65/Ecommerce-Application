@@ -173,7 +173,9 @@
   /* color:#474bff */
 }
 
-
+.quantity-input{
+  color: rgb(0, 0, 0);
+}
 
 .aawa span{
   /* background-color: #e8e8f6; */

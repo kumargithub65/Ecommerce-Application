@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 import "./css/Eachproduct.css";
 import Header from "./header";
 import globalContext from "./context/context";
+import Counter from "./counter";
+import "./css/eachcart.css";
 export default function Eachproduct() {
   let [datas, setData] = useState([]);
   let [ch,setCh] = useState(false)
@@ -26,13 +28,22 @@ export default function Eachproduct() {
   return (
     <globalContext.Consumer>
       {(value)=>{
+
   function cartclick(){
+    // console.log("clicked")
+    // console.log(value.carts,{...datas,quantity:1})
     value.cartset({...datas,quantity:1})
 
     setCh(true)
   }
 
 
+  function cartclickk(dd){
+    console.log("ftftf",dd)
+    value.cc({...dd,quantity:1})
+
+    setCh(true)
+  }
 
 
 
@@ -49,7 +60,10 @@ export default function Eachproduct() {
          
             <p>{datas.description}</p>
             <div className="price">${datas.price}</div>
-            <button  onClick={ cartclick} >{ "Add to Cart"}</button>
+            { ch &&
+            <Counter kok={cartclick} elem={{...datas,quantity:1}} />
+      }
+            <button  onClick={ cartclick} >Add To Cart</button>
           </div>
         </div>
       ) : (

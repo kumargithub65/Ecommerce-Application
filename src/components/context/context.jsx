@@ -20,6 +20,8 @@ export function Global(props) {
       if (c.findIndex((ele) => ele.id === elem.id) === -1) {
         // console.log(elem);
         setC([...c, elem]);
+      // console.log({elem:elem,c:c})
+
         // console.log({totalvalue})
         // console.log({elemp:elem.price})
 
@@ -28,6 +30,8 @@ export function Global(props) {
 
    
       } else {
+      // console.log({"min":c})
+
 
         // console.log({totalvalue})
 // console.log({el:elem})
@@ -57,6 +61,10 @@ export function Global(props) {
 
       // }
       // setTotalvalue([...c, elem].reduce((acc, ele) => acc + ele.price, 0));
+    },
+    cc:(ell)=>{
+      // console.log({c})
+      setC([...c,ell])
     },
     setincrease: (price,el,producttotal) => {
 

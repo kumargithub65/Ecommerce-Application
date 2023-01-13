@@ -31,7 +31,18 @@ img{
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 
+.ring{
+    background-color: #0881794f;
+    border-radius: 50px;
+    height: 20px;
+    width: 20px;
+    /* font-size:1rem; */
+    font-weight: 600;
+}
+.ring h2{
+    font-size: 1px;
 
+}
 
 * {
     margin: 0;
@@ -315,6 +326,10 @@ body {
     right: 10px;
 
 }
+/* 
+.badas{
+
+} */
 
 #product1 .pro-container {
 
