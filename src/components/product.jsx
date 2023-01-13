@@ -48,7 +48,14 @@ value.cartset(elem)
 // }else{
 //     value.cartset({...elem,quantity: elem.quantity++})
 // }
- 
+let inde = value.carts.findIndex((ele) => ele.id === element.id);
+// console.log(inde)
+let quantit = value.carts.map((ele) => {
+  if (ele.id === element.id) {
+    return ele.quantity;
+  }
+})[inde];
+console.log(quantit)
 
    }
 

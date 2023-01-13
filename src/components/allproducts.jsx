@@ -26,7 +26,7 @@ return <globalContext.Consumer>
       return ele.quantity;
     }
   })[inde];
-
+console.log(quantit)
   return (
     <div className="pro">
            <Link to={`/products/${id}`}>
@@ -50,9 +50,11 @@ return <globalContext.Consumer>
         <h4>${price}</h4>
       </div>
       {/* <a href="#"> */}
-      </Link>
+    
       {/* <h5 className="ring">1</h5> */}
-      <button onClick={carting}>
+      {/* <button onClick={carting}> */}
+      {/* <button onClick={carting}> */}
+
         {/* {checkj ? (
           "✔️"
         ) : ( */}
@@ -61,11 +63,13 @@ return <globalContext.Consumer>
     
         <ProductBadge ere={quantit}/>
         </div>
-          {/* <span className="material-symbols-outlined cart">shopping_cart</span> */}
+          <span className="material-symbols-outlined cart">shopping_cart</span>
           {/* <Counter elem={element}/> */}
     
         {/* )} */}
-      </button>
+      {/* </button> */}
+
+      </Link>
       {/* <p>{quantity}</p> */}
       {/* </a> */}
     </div>
