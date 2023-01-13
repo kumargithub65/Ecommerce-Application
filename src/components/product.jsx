@@ -73,14 +73,14 @@ value.cartset(elem)
 
             {/* <div className="vg"> */}
              {products.length ? products.map(ele => {
-            let inde = value.carts.findIndex((ele) => ele.id === element.id);
-            // console.log(inde)
-            let quantit = value.carts.map((ele) => {
-              if (ele.id === element.id) {
-                return ele.quantity;
-              }
-            })[inde];
-          console.log(quantit)
+        //     let inde = value.carts.findIndex((ele) => ele.id === element.id);
+        //     // console.log(inde)
+        //     let quantit = value.carts.map((ele) => {
+        //       if (ele.id === element.id) {
+        //         return ele.quantity;
+        //       }
+        //     })[inde];
+        //   console.log(quantit)
               return  <Allproducts cartTo={setcart} element={ele} key={ele.id} />
             }) : <div className="bars"></div>}
             {/* </div> */}
