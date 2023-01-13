@@ -1,13 +1,16 @@
 import "./css/home.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import ProductBadge from "./productbadge";
 
 function Allproducts(props) {
   const { element, cartTo } = props;
-  const { title, rating, price, image, id, description, category } = element;
+  const { title, rating, price, image, id, description, category,quantity } = element;
   let [checkj, setCheck] = useState(false);
   function carting() {
+
     cartTo(element);
+
     setCheck(true);
     // console.log(check)
   }
@@ -38,12 +41,16 @@ function Allproducts(props) {
       {/* <a href="#"> */}
       </Link>
       <button onClick={carting}>
-        {checkj ? (
+        {/* {checkj ? (
           "✔️"
-        ) : (
+        ) : ( */}
+        {/* <ProductBadge/> */}
+          
           <span className="material-symbols-outlined cart">shopping_cart</span>
-        )}
+    
+        {/* )} */}
       </button>
+      {/* <p>{quantity}</p> */}
       {/* </a> */}
     </div>
   );

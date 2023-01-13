@@ -21,16 +21,18 @@ function Cart({ eleme }) {
         // console.log(totalvaluee);
 
 
-        function setincreas(price) {
-          value.setincrease(price);
+        function setincreas(price,eleme,producttotal) {
+          // console.log(price)
+          value.setincrease(price,eleme,producttotal);
         }
 
-        function setDecreas(price) {
-          value.setDecrease(price);
+        function setDecreas(price,eleme) {
+          // console.log(price)
+          value.setDecrease(price,eleme);
         }
 
-        function removedd(id,pricc) {
-          value.removed(id,pricc)
+        function removedd(id,pricc,eleme) {
+          value.removed(id,pricc,eleme)
         }
 
         return (

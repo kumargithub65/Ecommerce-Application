@@ -46,7 +46,7 @@ export default function Header() {
                 {/* <i class="fas fa-shopping-bag"></i>  */}
                 <li>
                   <Link to="/cart">
-                  <SimpleBadge counttt={value.carts.length}/>
+                  <SimpleBadge counttt={value.carts.length}/>    
                   </Link>{" "}
                 
                 </li>
@@ -79,7 +79,7 @@ export default function Header() {
                       {/* <span className="material-symbols-outlined">
                         shopping_cart
                       </span>     */}
-                      <SimpleBadge counttt={value.carts.length}/>
+                      <SimpleBadge counttt={value.carts.length}/>      
                     </Link>{" "}
                 
              

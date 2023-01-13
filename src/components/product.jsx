@@ -15,7 +15,13 @@ let [a,setA] = useState([])
 async function fetching(){
     let response = await fetch("https://fakestoreapi.com/products/")
     let data = await response.json()
-    setProducts(data)
+    // setProducts(data)
+let ch = data.map(ele => {
+    return{
+        ...ele,quantity:1
+    }
+ })
+setProducts(ch)
 }
 
 useEffect(()=>{
@@ -35,7 +41,13 @@ useEffect(()=>{
 //  setA([...a,elem]);
 //   console.log({value})
 //     value.carts.push(a)
-    value.cartset(elem)
+value.cartset(elem)
+// console.log(elem)
+// if(value.carts.findIndex(ele=> ele.id === elem.id) === -1){
+//     value.cartset({...elem,quantity: elem.quantity= elem.quantity  + 1})
+// }else{
+//     value.cartset({...elem,quantity: elem.quantity++})
+// }
  
 
    }

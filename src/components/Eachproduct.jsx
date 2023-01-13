@@ -27,7 +27,7 @@ export default function Eachproduct() {
     <globalContext.Consumer>
       {(value)=>{
   function cartclick(){
-    value.cartset(datas)
+    value.cartset({...datas,quantity:1})
 
     setCh(true)
   }
@@ -49,7 +49,7 @@ export default function Eachproduct() {
          
             <p>{datas.description}</p>
             <div className="price">${datas.price}</div>
-            <button disabled={ch} onClick={ cartclick} >{ ch? "Added to cart":"Add to Cart"}</button>
+            <button  onClick={ cartclick} >{ "Add to Cart"}</button>
           </div>
         </div>
       ) : (
