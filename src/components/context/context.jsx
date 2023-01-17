@@ -6,7 +6,7 @@ let globalContext = React.createContext();
 export function Global(props) {
   let [c, setC] = useState([]);
   let totalvaluee = c.reduce((acc, ele) => acc + ele.price, 0);
-
+  let [ff,setFF] = useState([])
   let [totalvalue, setTotalvalue] = useState(0);
   let [incquant, setIncquant] = useState(1);
   let value;
@@ -14,8 +14,15 @@ export function Global(props) {
     carts: c,
     vall: incquant,
     total: totalvalue,
-    fetchedapi:[],
-    setfetchedapi : ()=>{},
+    fetchedapi:ff,
+    setfetchedapi : async (url)=>{
+      if(ff.length===0){
+      let response = await fetch(url);
+      let data = await response.json();
+      console.log(data)
+      setFF(data);
+      }
+    },
     cartset: (elem) => {
       let aasa = c[c.findIndex((ele) => ele.id === elem.id)];
 

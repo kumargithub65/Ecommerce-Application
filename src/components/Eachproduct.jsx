@@ -10,20 +10,20 @@ export default function Eachproduct() {
   let [datas, setData] = useState([]);
   let [ch,setCh] = useState(false)
   let { id } = useParams();
-  async function fetchin() {
-    try {
-      const response = await fetch(`https://fakestoreapi.com/products/${id}`);
-      const data = await response.json();
-      setData(data);
+  // async function fetchin() {
+  //   try {
+  //     const response = await fetch(`https://fakestoreapi.com/products/${id}`);
+  //     const data = await response.json();
+  //     setData(data);
   
-    } catch (err) {
-      console.log("something went wrong");
-    }
-  }
+  //   } catch (err) {
+  //     // console.log("something went wrong");
+  //   }
+  // }
 
-  useEffect(()=>{
-    fetchin();
-  },[])
+  // useEffect(()=>{
+  //   fetchin();
+  // },[])
 
   return (
     <globalContext.Consumer>
@@ -37,14 +37,18 @@ export default function Eachproduct() {
     setCh(true)
   }
 
+function assasrd(){
+  // console.log(id)
+let dard = value.fetchedapi.filter(ele => ele.id === Number(id))
+      setData(dard[0]);
+ 
 
-  function cartclickk(dd){
-    console.log("ftftf",dd)
-    value.cc({...dd,quantity:1})
-
-    setCh(true)
-  }
-
+  return(
+    <div className="asaas">
+    <div className="bars"></div>
+    </div>
+  )
+}
 
 
 
@@ -67,9 +71,8 @@ export default function Eachproduct() {
           </div>
         </div>
       ) : (
-        <div className="asaas">
-        <div className="bars"></div>
-        </div>
+      
+        assasrd()
       )}
     </div>
     )}}
