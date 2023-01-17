@@ -19,7 +19,7 @@ export function Global(props) {
       if(ff.length===0){
       let response = await fetch(url);
       let data = await response.json();
-      console.log(data)
+      // console.log(data)
       setFF(data);
       }
     },
