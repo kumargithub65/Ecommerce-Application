@@ -14,6 +14,8 @@ export function Global(props) {
     carts: c,
     vall: incquant,
     total: totalvalue,
+    fetchedapi:[],
+    setfetchedapi : ()=>{},
     cartset: (elem) => {
       let aasa = c[c.findIndex((ele) => ele.id === elem.id)];
 

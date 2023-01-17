@@ -7,6 +7,15 @@
     background-repeat: no-repeat;
     animation: bars-4tzcsomd 1s infinite,
            bars-d0g8gh 1s infinite;
+        
+  }
+
+  .loadingabc{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+
   }
   
   @keyframes bars-4tzcsomd {
