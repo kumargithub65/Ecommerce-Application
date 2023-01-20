@@ -454,6 +454,10 @@ left :1px; */
 #nav{
     padding-bottom: 20px;
 }
+
+#nav{
+    background-color: #bddbff;
+}
 /* #nav{
 
         position: fixed;
@@ -485,7 +489,7 @@ left :1px; */
 */
 
 #header, #hero, #nav {
-    background-color: #bddbffc7;
+    background-color: #bddbff;
 }
 
 #nav li {
