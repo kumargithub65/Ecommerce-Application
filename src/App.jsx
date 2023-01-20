@@ -1,6 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import React, { Component, Suspense } from "react";
 import { useState, useEffect } from "react";
+import { GoogleOAuthProvider } from '@react-oauth/google';
+import { googleLogout ,GoogleLogin} from '@react-oauth/google';
 import { createPortal } from "react-dom";
 import "./components/css/loader.css";
 import { lazy } from "react";
@@ -17,44 +19,48 @@ const Protectedroute = lazy(() => import("./components/protectedroute"));
 
 function App() {
   return (
-    // <React.Fragment>
-        <Suspense fallback={<div className="loadingabc"><div className="bars"></div></div>}>
-      <Routes>
 
-          <Route path="/" element={<Home />} />
-          <Route
-            path="/products"
-            element={
-              <Protectedroute>
-                <Product />
-              </Protectedroute>
-            }
-          />
-          <Route
-            path="/Cart"
-            element={
-              <Protectedroute>
-                <Cart />
-              </Protectedroute>
-            }
-          />
-          <Route path="/Signup" element={<Signup />} />
-          <Route path="/signin" element={<SignIn />} />
-          <Route
-            path="/products/:id"
-            element={
-              <Protectedroute>
-                <Eachproduct />
-              </Protectedroute>
-            }
-          />
-          <Route path="*" element={<Home />} />
-      </Routes>
+      // <React.Fragment>
+      <GoogleOAuthProvider clientId="806061476331-e367sr5arogonlmsrehc9279g00cembk.apps.googleusercontent.com" >
+    
 
-        </Suspense>
-      // {/* <h1>hello world</h1> */}
-    // </React.Fragment>
-  );
+          <Suspense fallback={<div className="loadingabc"><div className="bars"></div></div>}>
+        <Routes>
+
+            <Route path="/" element={<Home />} />
+            <Route
+              path="/products"
+              element={
+                <Protectedroute>
+                  <Product />
+                </Protectedroute>
+              }
+            />
+            <Route
+              path="/Cart"
+              element={
+                <Protectedroute>
+                  <Cart />
+                </Protectedroute>
+              }
+            />
+            <Route path="/Signup" element={<Signup />} />
+            <Route path="/signin" element={<SignIn />} />
+            <Route
+              path="/products/:id"
+              element={
+                <Protectedroute>
+                  <Eachproduct />
+                </Protectedroute>
+              }
+            />
+            <Route path="*" element={<Home />} />
+        </Routes>
+
+          </Suspense>
+
+        </GoogleOAuthProvider>
+  //   //   // </React.Fragment>
+    );
 }
-
 export default App;

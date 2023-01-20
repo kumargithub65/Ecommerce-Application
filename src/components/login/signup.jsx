@@ -6,6 +6,8 @@ import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 // import Link from "@mui/material/Link";
+import { googleLogout ,GoogleLogin} from '@react-oauth/google';
+import jwt_decode from "jwt-decode"
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
@@ -21,23 +23,23 @@ import {Link, useNavigate} from "react-router-dom"
 import Cookies from "js-cookie";
 
 
-function Copyright(props) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
+// function Copyright(props) {
+//   return (
+//     <Typography
+//       variant="body2"
+//       color="text.secondary"
+//       align="center"
+//       {...props}
+//     >
+//       {"Copyright © "}
+//       <Link color="inherit" href="https://mui.com/">
+//         Your Website
+//       </Link>{" "}
+//       {new Date().getFullYear()}
+//       {"."}
+//     </Typography>
+//   );
+// }
 
 const theme = createTheme();
 
@@ -71,6 +73,8 @@ async function Authen(userdatas,setError,setMessage){
 
 export default function Signup() {
   let navaa = useNavigate()
+  let navam = useNavigate()
+
   let token = Cookies.get("token")
   useEffect(()=>{
     if(token !== undefined){
@@ -84,7 +88,7 @@ export default function Signup() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(event)
+    // console.log(event)
     const data = new FormData(event.currentTarget);
     const details = {
         email: data.get("email"),
@@ -94,6 +98,15 @@ export default function Signup() {
 //    alert("wfwefrw fewfw")
 Authen(details,setError,setMessage)
   };
+
+
+  function googlesuccess(res){
+    let decode = jwt_decode(res.credential)
+    Cookies.set("token",true, { expires: 30 })
+    console.log(decode)
+
+    return navam("/")
+  }
 
   function authmessage(){
     let nava = useNavigate()
@@ -110,7 +123,8 @@ console.log("fail")
    if(error===false){
 console.log("success")
 Cookies.set("token",true, { expires: 30 })
-nava("/")
+  
+    nava("/")
     return <Stack className="abc" style = {{margin:"20px",width:"100%"}} sx={{ width: '100%' }} spacing={2}>
 
     <Alert variant="outlined" severity="success">
@@ -122,6 +136,8 @@ nava("/")
   }
 
   return (
+    <div>
+
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
@@ -179,9 +195,9 @@ nava("/")
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link href="#" variant="body2">
+                {/* <Link href="#" variant="body2">
                   Forgot password?
-                </Link>
+                </Link> */}
               </Grid>
               <Grid item>
                 <Link to="/signin" variant="body2">
@@ -194,7 +210,22 @@ nava("/")
         {authmessage()}
  
       </Container>
+    
     </ThemeProvider>
+    <div className="logingoogle largegoogle">
+          <GoogleLogin  width="400px"  onSuccess={res => googlesuccess(res)} onError={()=> console.log("error")} />
+
+            
+          </div>
+          <div className="logingoogle smallgoogle">
+          <GoogleLogin  onSuccess={res => googlesuccess(res)} onError={()=> console.log("error")} />
+
+            
+          </div>
+          
+
+    </div>
+
   );
 }
   
