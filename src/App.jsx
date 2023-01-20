@@ -2,7 +2,6 @@ import { Route, Routes } from "react-router-dom";
 import React, { Component, Suspense } from "react";
 import { useState, useEffect } from "react";
 import { GoogleOAuthProvider } from '@react-oauth/google';
-import { googleLogout ,GoogleLogin} from '@react-oauth/google';
 import { createPortal } from "react-dom";
 import "./components/css/loader.css";
 import { lazy } from "react";
@@ -15,6 +14,7 @@ const Eachproduct = lazy(() => import("./components/Eachproduct"));
 const Signup = lazy(() => import("./components/login/signup"));
 const SignIn = lazy(() => import("./components/login/signin"));
 const Protectedroute = lazy(() => import("./components/protectedroute"));
+import Profile from "./components/profile";
 // import { useState } from "react";
 
 function App() {
@@ -51,6 +51,14 @@ function App() {
               element={
                 <Protectedroute>
                   <Eachproduct />
+                </Protectedroute>
+              }
+            />
+                   <Route
+              path="/profile"
+              element={
+                <Protectedroute>
+                  <Profile />
                 </Protectedroute>
               }
             />

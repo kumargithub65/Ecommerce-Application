@@ -8,7 +8,8 @@ import Checkbox from "@mui/material/Checkbox";
 // import Link from "@mui/material/Link";
 import { googleLogout, GoogleLogin } from "@react-oauth/google";
 import jwt_decode from "jwt-decode";
-
+import globalContext from "../context/context";
+import { useContext } from "react";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
@@ -72,7 +73,8 @@ export default function SignIn() {
   let navaa = useNavigate();
   let navamas = useNavigate();
   let navasign = useNavigate();
-
+  let value = useContext(globalContext)
+// console.log(value)
   let token = Cookies.get("token");
   useEffect(() => {
     if (token !== undefined) {
@@ -85,7 +87,10 @@ export default function SignIn() {
 
   function googlesuccess(res) {
     let decode = jwt_decode(res.credential);
+    // value.setgoogledata(decode)
     Cookies.set("token", true, { expires: 30 });
+    Cookies.set("userinfo", JSON.stringify(decode), { expires: 30 });
+
     console.log(decode);
 
     return navamas("/");

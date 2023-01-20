@@ -213,3 +213,13 @@ left: 50px; */
   font-weight: 600;
   color: #474bff;
 }
+
+@media only screen and (max-width: 600px) { 
+  .avas{
+  margin-top: 100px;
+  }
+  
+#product1{
+  margin-top: 50px;
+}
+}

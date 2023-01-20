@@ -23,7 +23,7 @@ export default function Header() {
     <globalContext.Consumer>
       {(value) => {
         return (
-            <div>
+            <div id="fwe" >
           <section id="header">
             <NavLink className={({ isActive }) =>
               isActive ? "active" : undefined
@@ -58,7 +58,16 @@ export default function Header() {
                   </NavLink>{" "}
                 
                 </li>
-              
+                <li>
+                    
+                    <NavLink className={({ isActive }) =>
+              isActive ? "active" : undefined
+            } to="/profile">
+                  profile 
+                    </NavLink>{" "}
+                
+             
+                  </li>
                 <li onClick={loggingout}>
                   {" "}
                   <a>logout</a>
@@ -89,6 +98,17 @@ export default function Header() {
                     
                     <NavLink className={({ isActive }) =>
               isActive ? "active" : undefined
+            } to="/profile">
+                  profile 
+                    </NavLink>{" "}
+                
+             
+                  </li>
+
+                  <li>
+                    
+                    <NavLink className={({ isActive }) =>
+              isActive ? "active" : undefined
             } to="/cart">
                       {/* <span className="material-symbols-outlined">
                         shopping_cart
@@ -98,10 +118,12 @@ export default function Header() {
                 
              
                   </li>
+
                   <li onClick={loggingout}>
                     {" "}
                     <a>logout</a>
                   </li>
+
                 </ul>
               )}
 

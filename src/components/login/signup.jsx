@@ -17,10 +17,11 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import BasicAlerts from "./authmessage";
 import Alert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
-import React, { useState,useEffect } from "react";
+import React, { useState,useEffect, useContext } from "react";
 import "./auth.css"
 import {Link, useNavigate} from "react-router-dom"
 import Cookies from "js-cookie";
+import globalContext from "../context/context";
 
 
 // function Copyright(props) {
@@ -74,7 +75,7 @@ async function Authen(userdatas,setError,setMessage){
 export default function Signup() {
   let navaa = useNavigate()
   let navam = useNavigate()
-
+let value = useContext(globalContext)
   let token = Cookies.get("token")
   useEffect(()=>{
     if(token !== undefined){
@@ -103,8 +104,10 @@ Authen(details,setError,setMessage)
   function googlesuccess(res){
     let decode = jwt_decode(res.credential)
     Cookies.set("token",true, { expires: 30 })
-    console.log(decode)
-
+    // console.log(decode)
+    // value.setgoogledata(decode)
+    Cookies.set("userinfo", JSON.stringify(decode), { expires: 30 })
+   
     return navam("/")
   }
 

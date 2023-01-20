@@ -7,6 +7,7 @@ export function Global(props) {
   let [c, setC] = useState([]);
   let totalvaluee = c.reduce((acc, ele) => acc + ele.price, 0);
   let [ff,setFF] = useState([])
+  // let [googleee,setGoogleee] = useState(false)
   let [totalvalue, setTotalvalue] = useState(0);
   let [incquant, setIncquant] = useState(1);
   let value;
@@ -23,12 +24,20 @@ export function Global(props) {
       setFF(data);
       }
     },
+
+    // setgoogledata:(res)=>{
+    //   setGoogleee(res)
+    // },
+    // profie:googleee,
     cartset: (elem) => {
       let aasa = c[c.findIndex((ele) => ele.id === elem.id)];
 
       if (c.findIndex((ele) => ele.id === elem.id) === -1) {
-        // console.log(elem);
+        // console.log(elem,c);
+
         setC([...c, elem]);
+        // console.log(elem,c);
+
       // console.log({elem:elem,c:c})
 
         // console.log({totalvalue})

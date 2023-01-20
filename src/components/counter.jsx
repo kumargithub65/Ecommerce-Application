@@ -18,11 +18,15 @@ export default function Counter({ elem, kok }) {
           }
         })[inde];
         let pp = quantit * elem.price;
+        // console.log(quantit)
         // console.log(quantit,value.carts)
         function increase(producttotal) {
           if (va) {
             // kok(elem)
-            value.cartset(elem)
+            value.cartset(elem);
+            // console.log(elem)
+
+            // value.cartset(elem)
             // console.log("va");
             setVa(false);
           }
@@ -52,7 +56,7 @@ export default function Counter({ elem, kok }) {
             >
               -
             </button>
-            <h2 style={{"color":"black"}} className="quantity-input">{quantit}</h2>
+            <h2 style={{"color":"black"}} className="quantity-input">{quantit===undefined?0:quantit}</h2>
             <button
               style={{ all: "unset", cursor: "pointer" }}
               onClick={increase}
