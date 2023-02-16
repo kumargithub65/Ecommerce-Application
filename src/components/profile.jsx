@@ -5,7 +5,9 @@ import Cookies from "js-cookie";
 export default function Profile() {
     
    let token = Cookies.get("userinfo")
-    let {name,picture,email} =  JSON.parse(token)
+   if(token != undefined){
+    let {name,picture,email} =  JSON?.parse(token)
+   
 //    console.log(name,picture,email)
   return (
     <div>
@@ -63,4 +65,6 @@ export default function Profile() {
       </div>
     </div>
   );
+      }
+      return
 }

@@ -58,6 +58,7 @@ export default function Header() {
                   </NavLink>{" "}
                 
                 </li>
+                { Cookies.get("userinfo") &&
                 <li>
                     
                     <NavLink className={({ isActive }) =>
@@ -68,6 +69,7 @@ export default function Header() {
                 
              
                   </li>
+      }
                 <li onClick={loggingout}>
                   {" "}
                   <a>logout</a>
@@ -94,6 +96,7 @@ export default function Header() {
                   {/* <li><a href="about.html" >cart</a></li>
     <li><a href="contact.html">logout</a></li> */}
                   {/* <i class="fas fa-shopping-bag"></i>  */}
+                   { Cookies.get("userinfo") &&
                   <li>
                     
                     <NavLink className={({ isActive }) =>
@@ -104,7 +107,7 @@ export default function Header() {
                 
              
                   </li>
-
+      }
                   <li>
                     
                     <NavLink className={({ isActive }) =>

@@ -14,7 +14,8 @@ const Eachproduct = lazy(() => import("./components/Eachproduct"));
 const Signup = lazy(() => import("./components/login/signup"));
 const SignIn = lazy(() => import("./components/login/signin"));
 const Protectedroute = lazy(() => import("./components/protectedroute"));
-import Profile from "./components/profile";
+const Profile = lazy(() => import("./components/profile"));
+
 // import { useState } from "react";
 
 function App() {
@@ -54,7 +55,7 @@ function App() {
                 </Protectedroute>
               }
             />
-                   <Route
+               <Route
               path="/profile"
               element={
                 <Protectedroute>
