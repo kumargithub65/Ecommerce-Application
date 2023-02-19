@@ -2,7 +2,7 @@ import Cookies from "js-cookie";
 import { Link, useNavigate } from "react-router-dom";
 import globalContext from "./context/context";
 import "./css/home.css";
-import logo from "../assets/img/logo.png";
+import logo from "../assets/img/cover.png";
 import { useState } from "react";
 import SimpleBadge from "./cartbadge";
 import { NavLink } from "react-router-dom";
@@ -28,7 +28,7 @@ export default function Header() {
             <NavLink className={({ isActive }) =>
               isActive ? "active" : undefined
             } to="/">
-              <img src={logo} alt="" />
+              <img src={logo} alt=""  style={{height:"50px",width:"100px"}}/>
             </NavLink>
             <div>
               <div onClick={change} className="hamburger">
