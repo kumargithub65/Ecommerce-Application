@@ -12,6 +12,7 @@ export default function Header() {
   let [a, setA] = useState(false);
   function loggingout() {
     Cookies.remove("token");
+    Cookies.remove("userinfo")
     navx("/signup");
   }
 
